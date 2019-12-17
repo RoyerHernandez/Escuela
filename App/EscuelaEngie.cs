@@ -24,46 +24,59 @@ namespace CoreEscuela.Entidades
 
         private void CargarEvaluaciones()
         {
-            foreach (var cursos in Escuela.Cursos)
+            var lista = new List<Evaluacion>();
+            foreach (var curso in Escuela.Cursos)
             {
-                foreach (var asignaturas in cursos.Asignaturas)
+                foreach (var asignatura in curso.Asignaturas)
                 {
-                    foreach (var alumnos in  cursos.Alumnos)
-                    {                        
-                       // evaluacion.nombre = GenerarEvaluacionesAlAzar().ToString();     
-                        List<Evaluaciones> evaluaciones = GenerarEvaluacionesAlAzar(cursos);                                                                
+                    foreach (var alumno in curso.Alumnos)
+                    {
+                        var rnd = new Random(System.Environment.TickCount);
 
+                        for (int i = 0; i < 5; i++)
+                        {
+                            var ev = new Evaluacion
+                            {
+                                Asignatura = asignatura,
+                                nombre = $"{asignatura.nombre} Ev#{i + 1}",
+                                Nota = (float)(5 * rnd.NextDouble()),
+                                Alumno = alumno
+                            };
+                           // alumno.Evaluaciones.Add(ev);
+                            lista.Add(ev);
+                        }
                     }
                 }
             }
+
         }
 
-        private List<Evaluaciones> GenerarEvaluacionesAlAzar(Curso curso)
+        /*private List<Evaluacion> GenerarEvaluacionesAlAzar(Curso curso)
         {
-                      
-            Random rdn = new Random();                      
+
+            Random rdn = new Random();
             string[] nombreExamen = { "Examen1", "Examen2", "Examen3", "Examen4", "Examen5" };
             double[] notas;
             List<Asignatura> asignaturasExamen = curso.Asignaturas;
             List<Alumno> alumnosExamen = curso.Alumnos;
-             int cantidadNotas = 5;
+            int cantidadNotas = 5;
 
             notas = new double[cantidadNotas];
 
-           for (int i=0; i<cantidadNotas; i++)
-            {               
-               notas[i] = (5 * rdn.NextDouble());
+            for (int i = 0; i < cantidadNotas; i++)
+            {
+                notas[i] = (5 * rdn.NextDouble());
             }
             var listaExamen = from ex1 in nombreExamen
                               from nt1 in notas
                               from as1 in asignaturasExamen
                               from al1 in alumnosExamen
-                              select new Evaluaciones { nombre = ex1, Nota = nt1, Asignatura = as1, Alumno = al1};
+                              select new Evaluacion { nombre = ex1, Nota = nt1, Asignatura = as1, Alumno = al1 };
 
-            
+
             return listaExamen.ToList();
 
-        }
+        }*/
 
         private List<Alumno> GenerarAlumnosAlAzar(int cantidad)
         {

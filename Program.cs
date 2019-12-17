@@ -36,10 +36,9 @@ namespace CoreEscuela.Entidades
                     {
                         foreach (var estudiante in cursos.Alumnos)
                         {
-                            foreach (var evaluacion in asignatura.Evaluaciones)
-                            {
-                                WriteLine($"Nombre : {cursos.nombre}, id : {cursos.uniqueId}, asignatura : {asignatura.nombre}, estudiante : {estudiante.nombre}, evaluacion : {evaluacion.nombre} ,nota : {evaluacion.Nota}");
-                            }
+                            
+                                WriteLine($"Nombre : {cursos.nombre}, id : {cursos.uniqueId}, asignatura : {asignatura.nombre}, estudiante : {estudiante.nombre}");
+                            
                         }
                     }
                 }
