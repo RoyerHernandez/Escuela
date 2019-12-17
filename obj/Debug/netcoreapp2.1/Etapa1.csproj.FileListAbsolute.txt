@@ -1,0 +1,11 @@
+D:\royer\DotNet\Etapa1\bin\Debug\netcoreapp2.1\Etapa1.deps.json
+D:\royer\DotNet\Etapa1\bin\Debug\netcoreapp2.1\Etapa1.runtimeconfig.json
+D:\royer\DotNet\Etapa1\bin\Debug\netcoreapp2.1\Etapa1.runtimeconfig.dev.json
+D:\royer\DotNet\Etapa1\bin\Debug\netcoreapp2.1\Etapa1.dll
+D:\royer\DotNet\Etapa1\bin\Debug\netcoreapp2.1\Etapa1.pdb
+D:\royer\DotNet\Etapa1\obj\Debug\netcoreapp2.1\Etapa1.csprojAssemblyReference.cache
+D:\royer\DotNet\Etapa1\obj\Debug\netcoreapp2.1\Etapa1.csproj.CoreCompileInputs.cache
+D:\royer\DotNet\Etapa1\obj\Debug\netcoreapp2.1\Etapa1.AssemblyInfoInputs.cache
+D:\royer\DotNet\Etapa1\obj\Debug\netcoreapp2.1\Etapa1.AssemblyInfo.cs
+D:\royer\DotNet\Etapa1\obj\Debug\netcoreapp2.1\Etapa1.dll
+D:\royer\DotNet\Etapa1\obj\Debug\netcoreapp2.1\Etapa1.pdb
