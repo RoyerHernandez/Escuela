@@ -5,7 +5,7 @@ using CoreEscuela.Entidades;
 
 namespace CoreEscuela.Entidades
 {
-    public class EscuelaEngie
+    public sealed class EscuelaEngie
     {
         public Escuela Escuela { get; set; }
         public EscuelaEngie()
