@@ -35,8 +35,7 @@ namespace CoreEscuela.Entidades
                     foreach (var asignatura in cursos.Asignaturas)
                     {
                         foreach (var estudiante in cursos.Alumnos)
-                        {
-                            
+                        {                            
                                 WriteLine($"Nombre : {cursos.nombre}, id : {cursos.uniqueId}, asignatura : {asignatura.nombre}, estudiante : {estudiante.nombre}");
                             
                         }

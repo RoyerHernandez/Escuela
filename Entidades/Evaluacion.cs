@@ -6,7 +6,6 @@ namespace CoreEscuela.Entidades
     {
         public string uniqueId { get ; private set; }
         public string nombre { get; set; }
-
         public Alumno Alumno { get; set; }
         public Asignatura Asignatura { get; set; }
         public Double Nota { get; set; }
