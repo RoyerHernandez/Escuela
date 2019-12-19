@@ -14,7 +14,7 @@ namespace CoreEscuela.Entidades
             Printer.writeTitle("Bienvenidos a la Escuela");
             Printer.Beep(10000, cantidad: 10);
             imprimirCursosEscuela(engie.Escuela);
-
+            var listaObjetos = engie.GetObjetosEscuela();
         }
 
         private static int PredicadoMalHecho(Curso curobj)
@@ -36,8 +36,7 @@ namespace CoreEscuela.Entidades
                     {
                         foreach (var estudiante in cursos.Alumnos)
                         {                            
-                                WriteLine($"Nombre : {cursos.nombre}, id : {cursos.uniqueId}, asignatura : {asignatura.nombre}, estudiante : {estudiante.nombre}");
-                            
+                            WriteLine($"Nombre : {cursos.nombre}, id : {cursos.uniqueId}, asignatura : {asignatura.nombre}, estudiante : {estudiante.nombre}");                        
                         }
                     }
                 }
