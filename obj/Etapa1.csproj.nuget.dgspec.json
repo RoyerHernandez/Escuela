@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\royer\\DotNEt\\Etapa1\\Etapa1.csproj": {}
+    "D:\\Royer\\DotNet\\Etapa1\\Etapa1.csproj": {}
   },
   "projects": {
-    "D:\\royer\\DotNEt\\Etapa1\\Etapa1.csproj": {
+    "D:\\Royer\\DotNet\\Etapa1\\Etapa1.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\royer\\DotNEt\\Etapa1\\Etapa1.csproj",
+        "projectUniqueName": "D:\\Royer\\DotNet\\Etapa1\\Etapa1.csproj",
         "projectName": "Etapa1",
-        "projectPath": "D:\\royer\\DotNEt\\Etapa1\\Etapa1.csproj",
+        "projectPath": "D:\\Royer\\DotNet\\Etapa1\\Etapa1.csproj",
         "packagesPath": "C:\\Users\\royer.hernandez\\.nuget\\packages\\",
-        "outputPath": "D:\\royer\\DotNEt\\Etapa1\\obj\\",
+        "outputPath": "D:\\Royer\\DotNet\\Etapa1\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
