@@ -3,13 +3,14 @@ using System.Collections.Generic;
 
 namespace CoreEscuela.Entidades
 {
-    public class Escuela:  ObjetoEscuelaBase
+    public class Escuela:  ObjetoEscuelaBase, ILugar
     {   
 
         public int AñoDeCreación {get; set;} //La manera corta para definir el método get y set
 
         public string Pais { get; set; }
         public string Ciudad { get; set; }
+        public string Direccion { get; set; }
         public List<Curso> Cursos { get; set; }
 
         public List<Alumno> Alumnos { get; set; }
@@ -39,6 +40,10 @@ namespace CoreEscuela.Entidades
         {
             return $"Nombre: \'{nombre}\',{System.Environment.NewLine} TiposEscuela: {TiposEscuela}, {System.Environment.NewLine}Pais: {Pais}, {System.Environment.NewLine}Ciudad: {Ciudad}";
         }
+
+       public void LimpiarLugar(){
+            //TODO
+       }
 
     }
 }
