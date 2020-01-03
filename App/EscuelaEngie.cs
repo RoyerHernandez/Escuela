@@ -22,24 +22,39 @@ namespace CoreEscuela.Entidades
             CargarEvaluaciones();
         }
 
-        public List<ObjetoEscuelaBase> GetObjetosEscuela()
+
+
+    public List<ObjetoEscuelaBase> GetObjetosEscuela(
+            bool  traeEvaluaciones = true,
+            bool  traeAlumnos = true,
+            bool  traeAsignaturas = true,
+            bool  traeCursos = true            
+            )
         {
                 var listaObj = new List<ObjetoEscuelaBase>();
                     listaObj.Add(Escuela);
+
+                    if(traeCursos)
                     listaObj.AddRange(Escuela.Cursos);
                     foreach(var curso in Escuela.Cursos)
                     {
+                        if(traeAsignaturas)
                         listaObj.AddRange(curso.Asignaturas);
-                        listaObj.AddRange(curso.Alumnos);
-                            foreach(var alumno in curso.Alumnos)
-                            {
-                                listaObj.AddRange(alumno.Evaluaciones);
-                            }
 
+                        if(traeAlumnos)
+                        listaObj.AddRange(curso.Alumnos);
+                        
+                            if(traeEvaluaciones){
+                             foreach(var alumno in curso.Alumnos)
+                                {
+                                listaObj.AddRange(alumno.Evaluaciones);
+                                }
+                            }
                     }
 
                 return listaObj;
-        }
+        }   
+
 
         #region Métodos de Carga
 

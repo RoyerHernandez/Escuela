@@ -15,13 +15,8 @@ namespace CoreEscuela.Entidades
             Printer.writeTitle("Bienvenidos a la Escuela");
             Printer.Beep(10000, cantidad: 10);
             imprimirCursosEscuela(engie.Escuela);
-            var listaObjetos = engie.GetObjetosEscuela();
+            var listaObjetos = engie.GetObjetosEscuela(traeEvaluaciones : false);
 
-            var listaIlugar= from obj in listaObjetos
-                                where obj is Alumno
-                                select (Alumno)obj;
-
-           // engie.Escuela.LimpiarLugar();
         }
 
         private static int PredicadoMalHecho(Curso curobj)
