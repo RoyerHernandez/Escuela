@@ -9,11 +9,13 @@ namespace CoreEscuela.Entidades
 
         public List<Asignatura> Asignaturas{ get; set; }
         public List<Alumno> Alumnos{ get; set; }
-        public string Direccion { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
+        public string Direccion { get ; set ; }
 
         public void LimpiarLugar()
         {
-            //throw new NotImplementedException();
+            Printer.DrawLine();
+            Console.WriteLine("Limpiando Establecimiento");
+            Console.WriteLine($"Curso {nombre} limpio");
         }
     }
 }
