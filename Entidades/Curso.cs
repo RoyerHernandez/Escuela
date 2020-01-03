@@ -14,7 +14,7 @@ namespace CoreEscuela.Entidades
         public void LimpiarLugar()
         {
             Printer.DrawLine();
-            Console.WriteLine("Limpiando Establecimiento");
+            Console.WriteLine("Limpiando Establecimiento...");
             Console.WriteLine($"Curso {nombre} limpio");
         }
     }

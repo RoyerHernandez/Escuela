@@ -29,7 +29,7 @@ namespace CoreEscuela.Entidades
         //Manera corta de crear el Constructor    
         public Escuela(string nombre, int año) => (nombre, AñoDeCreación) = (nombre, año);
 
-        public Escuela(string nombre, int año, TiposEscuela tipos, string pais = "",string ciudad = "")
+        public Escuela(string nombre, int año, TiposEscuela tipos, string pais = "",string ciudad = "") :  base()
         {
             (nombre, AñoDeCreación) = (nombre, año);
             Pais = pais;
@@ -44,12 +44,13 @@ namespace CoreEscuela.Entidades
         public void LimpiarLugar()
         {
             Printer.DrawLine();
-            Console.WriteLine("Limpiando Escuela ..");
+            Console.WriteLine("Limpiando Escuela ..");            
             foreach(var curso in Cursos)
             {
                 curso.LimpiarLugar();
             }
-            Console.WriteLine($"Escuela {nombre} limpia");
+            Printer.writeTitle($"Escuela {nombre} limpia");
+            Printer.Beep(1000, cantidad:3);
         }
 
     }

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using CoreEscuela.Entidades;
 using static System.Console;
 
@@ -15,6 +16,12 @@ namespace CoreEscuela.Entidades
             Printer.Beep(10000, cantidad: 10);
             imprimirCursosEscuela(engie.Escuela);
             var listaObjetos = engie.GetObjetosEscuela();
+
+            var listaIlugar= from obj in listaObjetos
+                                where obj is Alumno
+                                select (Alumno)obj;
+
+           // engie.Escuela.LimpiarLugar();
         }
 
         private static int PredicadoMalHecho(Curso curobj)
