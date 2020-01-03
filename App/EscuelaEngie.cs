@@ -22,6 +22,27 @@ namespace CoreEscuela.Entidades
             CargarEvaluaciones();
         }
 
+        public List<ObjetoEscuelaBase> GetObjetosEscuela()
+        {
+                var listaObj = new List<ObjetoEscuelaBase>();
+                    listaObj.Add(Escuela);
+                    listaObj.AddRange(Escuela.Cursos);
+                    foreach(var curso in Escuela.Cursos)
+                    {
+                        listaObj.AddRange(curso.Asignaturas);
+                        listaObj.AddRange(curso.Alumnos);
+                            foreach(var alumno in curso.Alumnos)
+                            {
+                                listaObj.AddRange(alumno.Evaluaciones);
+                            }
+
+                    }
+
+                return listaObj;
+        }
+
+        #region Métodos de Carga
+
         private void CargarEvaluaciones()
         {            
             foreach (var curso in Escuela.Cursos)
@@ -47,52 +68,6 @@ namespace CoreEscuela.Entidades
                 }
             }
 
-        }
-
-        /*private List<Evaluacion> GenerarEvaluacionesAlAzar(Curso curso)
-        {
-
-            Random rdn = new Random();
-            string[] nombreExamen = { "Examen1", "Examen2", "Examen3", "Examen4", "Examen5" };
-            double[] notas;
-            List<Asignatura> asignaturasExamen = curso.Asignaturas;
-            List<Alumno> alumnosExamen = curso.Alumnos;
-            int cantidadNotas = 5;
-
-            notas = new double[cantidadNotas];
-
-            for (int i = 0; i < cantidadNotas; i++)
-            {
-                notas[i] = (5 * rdn.NextDouble());
-            }
-            var listaExamen = from ex1 in nombreExamen
-                              from nt1 in notas
-                              from as1 in asignaturasExamen
-                              from al1 in alumnosExamen
-                              select new Evaluacion { nombre = ex1, Nota = nt1, Asignatura = as1, Alumno = al1 };
-
-
-            return listaExamen.ToList();
-
-        }*/
-
-        public List<ObjetoEscuelaBase> GetObjetosEscuela()
-        {
-                var listaObj = new List<ObjetoEscuelaBase>();
-                    listaObj.Add(Escuela);
-                    listaObj.AddRange(Escuela.Cursos);
-                    foreach(var curso in Escuela.Cursos)
-                    {
-                        listaObj.AddRange(curso.Asignaturas);
-                        listaObj.AddRange(curso.Alumnos);
-                            foreach(var alumno in curso.Alumnos)
-                            {
-                                listaObj.AddRange(alumno.Evaluaciones);
-                            }
-
-                    }
-
-                return listaObj;
         }
 
         private List<Alumno> GenerarAlumnosAlAzar(int cantidad)
@@ -146,7 +121,7 @@ namespace CoreEscuela.Entidades
         }
     }
 
-
+        #endregion
 
 
 }
