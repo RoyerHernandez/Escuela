@@ -9,3 +9,14 @@ D:\royer\DotNet\Etapa1\obj\Debug\netcoreapp2.1\Etapa1.AssemblyInfoInputs.cache
 D:\royer\DotNet\Etapa1\obj\Debug\netcoreapp2.1\Etapa1.AssemblyInfo.cs
 D:\royer\DotNet\Etapa1\obj\Debug\netcoreapp2.1\Etapa1.dll
 D:\royer\DotNet\Etapa1\obj\Debug\netcoreapp2.1\Etapa1.pdb
+D:\platzi\dotnet\Escuela\bin\Debug\netcoreapp2.1\Etapa1.deps.json
+D:\platzi\dotnet\Escuela\bin\Debug\netcoreapp2.1\Etapa1.runtimeconfig.json
+D:\platzi\dotnet\Escuela\bin\Debug\netcoreapp2.1\Etapa1.runtimeconfig.dev.json
+D:\platzi\dotnet\Escuela\bin\Debug\netcoreapp2.1\Etapa1.dll
+D:\platzi\dotnet\Escuela\bin\Debug\netcoreapp2.1\Etapa1.pdb
+D:\platzi\dotnet\Escuela\obj\Debug\netcoreapp2.1\Etapa1.csprojAssemblyReference.cache
+D:\platzi\dotnet\Escuela\obj\Debug\netcoreapp2.1\Etapa1.csproj.CoreCompileInputs.cache
+D:\platzi\dotnet\Escuela\obj\Debug\netcoreapp2.1\Etapa1.AssemblyInfoInputs.cache
+D:\platzi\dotnet\Escuela\obj\Debug\netcoreapp2.1\Etapa1.AssemblyInfo.cs
+D:\platzi\dotnet\Escuela\obj\Debug\netcoreapp2.1\Etapa1.dll
+D:\platzi\dotnet\Escuela\obj\Debug\netcoreapp2.1\Etapa1.pdb
