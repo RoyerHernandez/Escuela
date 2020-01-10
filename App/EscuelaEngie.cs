@@ -22,6 +22,71 @@ namespace CoreEscuela.Entidades
             CargarEvaluaciones();
         }
 
+        public void ImprimirDiccionario(Dictionary<LlaveDiccionario, IEnumerable<ObjetoEscuelaBase>> dic,
+                    bool imprimirEval = false)
+        {
+            foreach(var obj in dic)
+            {
+                Printer.writeTitle(obj.Key.ToString());
+                foreach(var val in obj.Value)
+                {
+                    
+                    switch(val.GetType())
+                    {
+                        
+                        default:
+                    }
+
+
+                    if(val is Evaluacion)
+                    {
+                        if(imprimirEval)
+                        Console.WriteLine(val);
+                    }
+                    else if(val is Escuela)
+                    {
+                        Console.WriteLine("Escuela :"+val);
+                    }
+                    else if(val is Alumno)
+                    {
+                        Console.WriteLine("Alumno : "+ val);
+                    }else 
+                        Console.WriteLine(val);
+                        
+                }
+            }
+        }
+        public Dictionary<LlaveDiccionario, IEnumerable<ObjetoEscuelaBase>> GetDiccionarioObjetos()
+        {
+
+            var diccionario = new Dictionary<LlaveDiccionario, IEnumerable<ObjetoEscuelaBase>>();
+
+            diccionario.Add(LlaveDiccionario.ESCUELA, new[] { Escuela });
+            diccionario.Add(LlaveDiccionario.CURSO, Escuela.Cursos.Cast<ObjetoEscuelaBase>());
+            var listatmp = new List<Evaluacion>();
+            var listasig = new List<Asignatura>();
+            var listalum = new List<Alumno>();
+
+            foreach (var cur in Escuela.Cursos)
+            {
+                listasig.AddRange(cur.Asignaturas);
+                listalum.AddRange(cur.Alumnos);       
+                foreach (var alum in cur.Alumnos)
+                {
+                    listatmp.AddRange(alum.Evaluaciones);
+                }                
+            }
+             diccionario.Add(LlaveDiccionario.ASIGNATURA, 
+                                    listasig.Cast<ObjetoEscuelaBase>());
+             diccionario.Add(LlaveDiccionario.ALUMNO,
+                                    listalum.Cast<ObjetoEscuelaBase>());                           
+             diccionario.Add(LlaveDiccionario.EVALUACION,
+                                    listatmp.Cast<ObjetoEscuelaBase>());
+
+
+            return diccionario;
+        }
+
         public IReadOnlyList<ObjetoEscuelaBase> GetObjetosEscuela(
 
                bool traeEvaluaciones = true,
@@ -41,7 +106,7 @@ namespace CoreEscuela.Entidades
                bool traeCursos = true
                )
         {
-            return GetObjetosEscuela(out conteoEvaluaciones ,out int dummy, out dummy, out dummy);
+            return GetObjetosEscuela(out conteoEvaluaciones, out int dummy, out dummy, out dummy);
         }
 
         public IReadOnlyList<ObjetoEscuelaBase> GetObjetosEscuela(
@@ -54,7 +119,7 @@ namespace CoreEscuela.Entidades
                bool traeCursos = true
                )
         {
-            return GetObjetosEscuela(out conteoEvaluaciones ,out conteoAlumnos,out int dummy, out dummy);
+            return GetObjetosEscuela(out conteoEvaluaciones, out conteoAlumnos, out int dummy, out dummy);
         }
 
         public IReadOnlyList<ObjetoEscuelaBase> GetObjetosEscuela(
@@ -67,7 +132,7 @@ namespace CoreEscuela.Entidades
                bool traeCursos = true
                )
         {
-            return GetObjetosEscuela(out conteoEvaluaciones ,out conteoAlumnos,out conteAsignaturas,out int dummy);
+            return GetObjetosEscuela(out conteoEvaluaciones, out conteoAlumnos, out conteAsignaturas, out int dummy);
         }
 
         public IReadOnlyList<ObjetoEscuelaBase> GetObjetosEscuela(

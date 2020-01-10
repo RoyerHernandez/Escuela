@@ -14,15 +14,11 @@ namespace CoreEscuela.Entidades
             engie.Inicializar();
             Printer.writeTitle("Bienvenidos a la Escuela");
             Printer.Beep(10000, cantidad: 10);
-            imprimirCursosEscuela(engie.Escuela);
+            //imprimirCursosEscuela(engie.Escuela);
 
-            int dummy = 0;
-            var listaObjetos = engie.GetObjetosEscuela(
-            out int conteoEvaluaciones ,
-            out int conteoAlumnos   ,
-            out dummy    ,
-            out dummy 
-            );
+            var dictmp = engie.GetDiccionarioObjetos();
+
+            engie.ImprimirDiccionario(dictmp);
 
         }
 
