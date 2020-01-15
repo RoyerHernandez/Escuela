@@ -25,34 +25,36 @@ namespace CoreEscuela.Entidades
         public void ImprimirDiccionario(Dictionary<LlaveDiccionario, IEnumerable<ObjetoEscuelaBase>> dic,
                     bool imprimirEval = false)
         {
-            foreach(var obj in dic)
+            foreach(var objDic in dic)
             {
-                Printer.writeTitle(obj.Key.ToString());
-                foreach(var val in obj.Value)
+                Printer.writeTitle(objDic.Key.ToString());
+                foreach(var val in objDic.Value)
                 {
                     
-                    switch(val.GetType())
+                    switch (objDic.Key)
                     {
-                        
+                        case LlaveDiccionario.EVALUACION:
+                                if(imprimirEval)
+                                Console.WriteLine(val);
+                        break;
+                        case LlaveDiccionario.ESCUELA:
+                                Console.WriteLine("Escuela :"+val);        
+                        break;
+                        case LlaveDiccionario.ALUMNO:
+                                Console.WriteLine("Alumno : "+ val);
+                        break;
+                        case LlaveDiccionario.CURSO:
+                            var curTmp = val as Curso;
+                            if(curTmp != null)
+                            { 
+                                int count = curTmp.Alumnos.Count();
+                                Console.WriteLine("Curso : "+ val + "Cantidad de Alumnos: " + count);
+                            }
+                        break;
                         default:
-                    }
-
-
-                    if(val is Evaluacion)
-                    {
-                        if(imprimirEval)
                         Console.WriteLine(val);
-                    }
-                    else if(val is Escuela)
-                    {
-                        Console.WriteLine("Escuela :"+val);
-                    }
-                    else if(val is Alumno)
-                    {
-                        Console.WriteLine("Alumno : "+ val);
-                    }else 
-                        Console.WriteLine(val);
-                        
+                        break;
+                    }                        
                 }
             }
         }
@@ -197,7 +199,7 @@ namespace CoreEscuela.Entidades
                             {
                                 Asignatura = asignatura,
                                 nombre = $"{asignatura.nombre} Ev#{i + 1}",
-                                Nota = (float)(5 * rnd.NextDouble()),
+                                Nota = MathF.Round((float)(5 * rnd.NextDouble())),
                                 Alumno = alumno
                             };
                             alumno.Evaluaciones.Add(ev);

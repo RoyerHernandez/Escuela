@@ -18,7 +18,7 @@ namespace CoreEscuela.Entidades
 
             var dictmp = engie.GetDiccionarioObjetos();
 
-            engie.ImprimirDiccionario(dictmp);
+            engie.ImprimirDiccionario(dictmp,true);
 
         }
 
