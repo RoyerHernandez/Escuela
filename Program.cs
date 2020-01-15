@@ -10,6 +10,9 @@ namespace CoreEscuela.Entidades
     {
         static void Main(string[] args)
         {
+            AppDomain.CurrentDomain.ProcessExit += AccionDelEvento;
+            AppDomain.CurrentDomain.ProcessExit += (o,s)=> Printer.Beep(2000,1000,1);
+
             var engie = new EscuelaEngie();
             engie.Inicializar();
             Printer.writeTitle("Bienvenidos a la Escuela");
@@ -20,6 +23,13 @@ namespace CoreEscuela.Entidades
 
             engie.ImprimirDiccionario(dictmp,true);
 
+        }
+
+        private static void AccionDelEvento(object sender, EventArgs e)
+        {
+            Printer.writeTitle("SALIENDO");
+            Printer.Beep(3000, 1000, 3);
+            Printer.writeTitle("SALIÓ");
         }
 
         private static int PredicadoMalHecho(Curso curobj)

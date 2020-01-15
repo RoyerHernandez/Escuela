@@ -185,21 +185,20 @@ namespace CoreEscuela.Entidades
 
         private void CargarEvaluaciones()
         {
+            var rnd = new Random();
             foreach (var curso in Escuela.Cursos)
             {
                 foreach (var asignatura in curso.Asignaturas)
                 {
                     foreach (var alumno in curso.Alumnos)
-                    {
-                        var rnd = new Random(System.Environment.TickCount);
-
+                    {                        
                         for (int i = 0; i < 5; i++)
                         {
                             var ev = new Evaluacion
                             {
                                 Asignatura = asignatura,
                                 nombre = $"{asignatura.nombre} Ev#{i + 1}",
-                                Nota = MathF.Round((float)(5 * rnd.NextDouble())),
+                                Nota = MathF.Round(5 * (float)rnd.NextDouble(),2),
                                 Alumno = alumno
                             };
                             alumno.Evaluaciones.Add(ev);
