@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using CoreEscuela.Entidades;
 
-namespace CoreEscuela.Entidades
+namespace CoreEscuela.App
 {
     public sealed class EscuelaEngie
     {

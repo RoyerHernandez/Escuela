@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using CoreEscuela.App;
 using CoreEscuela.Entidades;
 using static System.Console;
 
@@ -16,12 +17,12 @@ namespace CoreEscuela.Entidades
             var engie = new EscuelaEngie();
             engie.Inicializar();
             Printer.writeTitle("Bienvenidos a la Escuela");
-            Printer.Beep(10000, cantidad: 10);
+            //Printer.Beep(10000, cantidad: 10);
             //imprimirCursosEscuela(engie.Escuela);
+            //var dictmp = engie.GetDiccionarioObjetos();
+            //engie.ImprimirDiccionario(dictmp,true);
 
-            var dictmp = engie.GetDiccionarioObjetos();
-
-            engie.ImprimirDiccionario(dictmp,true);
+            var reporteador = new Reporteador(engie.GetDiccionarioObjetos());
 
         }
 
