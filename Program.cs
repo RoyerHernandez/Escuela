@@ -23,7 +23,9 @@ namespace CoreEscuela.Entidades
             //engie.ImprimirDiccionario(dictmp,true);
 
             var reporteador = new Reporteador(engie.GetDiccionarioObjetos());
-
+            var evaList = reporteador.GetListaEvaluacion();
+            var asigList = reporteador.GetListaAsignaturas();
+            var lisEvaAsig = reporteador.GetDicEvaluacionesXAsigna();
         }
 
         private static void AccionDelEvento(object sender, EventArgs e)
