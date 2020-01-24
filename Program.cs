@@ -26,6 +26,7 @@ namespace CoreEscuela.Entidades
             var evaList = reporteador.GetListaEvaluacion();
             var asigList = reporteador.GetListaAsignaturas();
             var lisEvaAsig = reporteador.GetDicEvaluacionesXAsigna();
+            var listPromEvalXAsign = reporteador.GetPromedioAlumnoPorAsignatura();
         }
 
         private static void AccionDelEvento(object sender, EventArgs e)
